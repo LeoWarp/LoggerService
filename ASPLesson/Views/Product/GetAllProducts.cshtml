@@ -1,0 +1,26 @@
+﻿@model List<ASPLesson.Domain.Entity.Product>
+
+@{
+    ViewBag.Title = "title";
+    Layout = "_Layout";
+}
+
+<div class="card col-md-12">
+    <ul class="card-ul">
+        @foreach (var product in Model)
+        {
+            <li>Название - @product.Name</li>   
+            <li>Описание - @product.Description</li>   
+            <li>Стоимость - @product.Price</li>   
+            <hr />
+        }
+    </ul>
+</div>
+
+<style>
+.card-ul {
+    font-size: 20px;
+    font-weight: bold;
+}
+    
+</style>

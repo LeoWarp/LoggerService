@@ -1,0 +1,31 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="5.0.9" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.9" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="5.0.2" />
+    <PackageReference Include="NLog.Extensions.Logging" Version="5.0.0-preview.2" />
+    <PackageReference Include="NLog.Web.AspNetCore" Version="4.14.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ASPLesson.DAL\ASPLesson.DAL.csproj" />
+    <ProjectReference Include="..\ASPLesson.Domain.Services\ASPLesson.Domain.Services.csproj" />
+    <ProjectReference Include="..\ASPLesson.Domain\ASPLesson.Domain.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Views\Login\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <_ContentIncludedByDefault Remove="Views\Route\Index.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\Route\ListAllEndpoints.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\Balance\GetBalanceCurrentUser.cshtml" />
+  </ItemGroup>
+
+</Project>

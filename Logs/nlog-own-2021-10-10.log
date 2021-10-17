@@ -1,0 +1,6 @@
+2021-10-10 10:22:14.5002|ASPLesson.Domain.Services.Services.ProductService|INFO|Мы перешли в метод GetAllProducts 
+2021-10-10 10:22:45.9667|ASPLesson.Domain.Services.Services.ProductService|INFO|Количество продуктов - 2 
+2021-10-10 10:27:38.7349|ASPLesson.Domain.Services.Services.ProductService|ERROR|Внутрення ошибка 500 Value cannot be null. System.ArgumentNullException: Value cannot be null.
+   at ASPLesson.Domain.Services.Services.ProductService.GetAllProducts() in C:\Users\leowa\Desktop\ASPLesson\ASPLesson.Domain.Services\Services\ProductService.cs:line 31
+2021-10-10 10:31:24.9983|ASPLesson.Domain.Services.Services.ProductService|FATAL|Error System.ArgumentNullException: Value cannot be null.
+   at ASPLesson.Domain.Services.Services.ProductService.GetAllProducts() in C:\Users\leowa\Desktop\ASPLesson\ASPLesson.Domain.Services\Services\ProductService.cs:line 31

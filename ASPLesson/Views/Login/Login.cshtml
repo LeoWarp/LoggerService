@@ -1,0 +1,44 @@
+﻿@model ASPLesson.Domain.Dto.LoginViewModel
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Вход в аккаунт";
+}
+
+<link rel="stylesheet" href="~/css/Card.css" />
+
+<div style="padding:60px;"></div>
+<div class="card col-md-12" style="background-color:black; border-radius:10px; box-shadow: 0 0 5px 2px red;">
+    <div class="row no-gutters">
+        <div class="col-md-4">
+            <div style="padding:65px;"></div>
+            <hr size="3" color="white" />
+            <div class="mb-auto">
+                <h2 class="ParagraphHome text-center"><a asp-controller="Login" asp-action="Register" style="color:white;">Регистрация</a></h2>
+            </div>
+        </div>
+        <div class="col-md-8">
+            <div class="card-body">
+                <span class="anchor" id="formLogin"></span>
+                <div class="card card-outline-secondary" style="background-color:black; border-radius:10px; box-shadow: 0 0 5px 0.5px red;">
+                    <div class="card-header">
+                        <h3 class="mb-0 text-center ParagraphHome text-white">Вход в аккаунт</h3>
+                    </div>
+                    <div class="card-body">
+                        <form autocomplete="on" method="post" asp-controller="Login" asp-action="Login">
+                            <div asp-validation-summary="All" style="font-size:23px; font-family:Impact" class="text-danger text-center"></div>
+                            <div class="form-group">
+                                <input asp-for="Email" class="form-control textbox-dg font-weight-bold text-center" placeholder="Email" type="text">
+                            </div>
+                            <div class="form-group">
+                                <input autocomplete="new-password" asp-for="Password" placeholder="Пароль" class="form-control textbox-dg font-weight-bold text-center" type="password">
+                            </div>
+                            <hr size="3" color="white" />
+                            <button class="btn btn-primary btn-lg float-right" type="submit">Отправить</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div style="padding:80px;"></div>

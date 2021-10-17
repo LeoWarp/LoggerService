@@ -1,0 +1,28 @@
+﻿@model ASPLesson.Domain.Dto.CreateUserViewModel
+
+<div class="card col-md-12">
+    <form asp-controller="Admin" asp-action="CreateUser">
+        <div asp-validation-summary="All" class="text-danger text-center"></div>
+        <div class="mb-3">
+            <label class="form-label">Имя</label>
+            <input asp-for="Name" type="text" class="form-control">
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Email</label>
+            <input asp-for="Email" type="email" class="form-control">
+        </div>
+        <div class="md-3">
+            <label class="form-label">Возраст</label>
+            <input asp-for="Age" type="text" class="form-control">
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Пароль</label>
+            <input asp-for="Password" type="password" class="form-control">
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Подвердите пароль</label>
+            <input asp-for="PasswordConfrim" type="password" class="form-control">
+        </div>
+        <button type="submit" class="btn btn-primary">Отправить</button>
+    </form>
+</div>

@@ -1,0 +1,49 @@
+﻿@using ASPLesson.Domain.Entity
+@model IEnumerable<User>
+@{
+    ViewData["Title"] = "GetAllUsers";
+}
+
+@{
+    var users = @Model.ToList();
+}
+
+}
+
+@for (int i = 0; i < users.Count; i++)
+{
+  if (i % 2 == 0)
+  {
+      <div class="card col-md-12">
+          <div class="row g-0">
+              <div class="col-md-4">
+                  <img src="https://images.wallpaperscraft.ru/image/soldat_shlem_art_123765_300x168.jpg" class="card-img" alt="...">
+              </div>
+              <div class="col-md-8">
+                  <div class="card-body">
+                      <h5 class="card-title text-center">Информация о пользователе #@i</h5>
+                      <p class="card-text">Имя - @users[i].Name</p>
+                  </div>
+              </div>
+          </div>
+      </div>   
+      <div style="padding: 15px;"></div>
+  }
+  else
+  {
+      <div class="card col-md-12">
+          <div class="row g-0">
+            <div class="col-md-8">
+                <div class="card-body">
+                    <h5 class="card-title text-center">Информация о пользователе #@i</h5>
+                    <p class="card-text">Имя - @users[i].Name</p>
+                </div>
+            </div>
+              <div class="col-md-4">
+                  <img src="https://images.wallpaperscraft.ru/image/kot_milyj_shar_127642_300x168.jpg" class="card-img" alt="...">
+              </div>
+          </div>
+      </div>  
+  }
+}
+

@@ -1,0 +1,65 @@
+﻿@model ASPLesson.Domain.Dto.RegisterViewModel
+@{
+    ViewData["Title"] = "Регистрация";
+}
+<script src="~/js/CheckPassword.js"></script>
+<div class="card col-md-12" style="background-color:black; border-radius:10px; box-shadow: 0 0 5px 2px red;">
+    <div class="row no-gutters">
+        <div class="col-md-4">
+            <div style="padding:35px;"></div>
+            <p class="p">
+                Придумайте пароль сложный, чтобы в него входили различные символы и длиной был больше 10 символов.
+                Ведь хакерам легче подобрать пароль если он у вас короткий и не сложный
+            </p>
+            <hr size="3" color="red" />
+            <p class="p">
+                Не придумвайте пароли которые содержат последовательность символов!
+            </p>
+            <input type="text" for="inp_2" id="inp_2">
+            <button onclick="checkPassword()" class="btn btn-primary">Проверить</button>
+            <div class="demo4">
+                <p class="p" id="demo4"></p>
+            </div>
+            <div class="demo3">
+                <p class="p" id="demo3"></p>
+            </div>
+            <div class="demo2">
+                <p class="p" id="demo2"></p>
+            </div>
+        </div>
+        <div class="col-md-8">
+            <div class="card-body">
+                <span class="anchor" id="formLogin"></span>
+                <div class="card card-outline-secondary" style="background-color:black; border-radius:10px; box-shadow: 0 0 5px 0.5px red;">
+                    <div class="card-header">
+                        <h3 class="mb-0 text-center text-white">Регистрация</h3>
+                    </div>
+                    <div class="card-body">
+                        <form asp-action="Register" asp-controller="Login"  method="post">
+                            <div asp-validation-summary="All" style="font-size:23px; font-family:Impact" class="text-danger text-center"></div>
+                            <div class="form-group">
+                                <input asp-for="Email" class="form-control textbox-dg font-weight-bold text-center" placeholder="Email" type="email">
+                            </div>
+                            <div class="form-group">
+                                <input asp-for="Name" class="form-control textbox-dg font-weight-bold text-center" placeholder="Имя" type="text">
+                            </div>
+                            <div class="form-group">
+                                <input autocomplete="new-password" asp-for="Password" placeholder="Пароль" class="form-control textbox-dg font-weight-bold text-center" type="password">
+                            </div>
+                            <span class="text-warning" style="font-size: small; font-family:'Comic Sans MS'">Пароль должен быть длиной больше 6 символов и иметь только латинские символы</span>
+                            <div class="form-group">
+                                <input autocomplete="new-password" asp-for="PasswordConfirm" placeholder="Подтвердите пароль" class="form-control textbox-dg font-weight-bold text-center" type="password">
+                            </div>
+                            <hr size="3" color="white" />
+                            <div>
+                                <h2 class="ParagraphHome text-center"><a asp-controller="Login" asp-action="Login" style="color:white;">Вход</a></h2>
+                            </div>
+                            <hr size="3" color="white" />
+                            <button class="btn btn-primary btn-lg float-right" type="submit">Отправить</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

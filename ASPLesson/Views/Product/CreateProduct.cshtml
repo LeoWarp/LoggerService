@@ -1,0 +1,59 @@
+﻿@using Microsoft.AspNetCore.Mvc.TagHelpers
+@model ASPLesson.Domain.Dto.CreateProductViewModel
+
+@{
+    ViewBag.Title = "Создание продукта";
+    Layout = "_Layout";
+}
+
+<div style="padding: 10px;"></div>
+<div class="card col-md-12">
+    <h2>HTML</h2>
+    <form method="post" action="~/Product/CreateProduct">
+        <p>
+            <label>Название</label><br/>
+            <input asp-for="Name" type="text"/>
+        </p>
+        <p>
+            <label>Описание</label><br/>
+            <textarea asp-for="Description" cols="50" rows="5">Введите описание</textarea>
+        </p>
+        <p>
+            <button type="submit" class="btn btn-primary">Отправить</button>
+        </p>
+    </form>
+</div>
+<div style="padding: 10px;"></div>
+<div class="card col-md-12">
+    <h2>HTML-хелпер</h2>
+    @using (Html.BeginForm("CreateProduct", "Product", FormMethod.Post))
+    {
+        <p>
+            @Html.Label("Name", "Название")<br/>
+            @Html.TextBox("Name")
+        </p>
+        <p>
+            @Html.Label("Description", "Описание")<br/>
+            @Html.TextArea("Description", "", 5, 50, null)
+        </p>
+        <p>
+            <button type="submit" class="btn btn-primary">Отправить</button>
+        </p>
+    }
+</div>
+
+
+@* <div class="card col-md-12"> *@
+@*     @using (Html.BeginForm("CreateProduct1", "Product", FormMethod.Post)) *@
+@*     { *@
+@*         @Html.RadioButton("car", "BMW M4", true)  *@
+@*         <span>BMW M4</span>  *@
+@*         @Html.RadioButton("car", "Audi A7")  *@
+@*         <span>Audi A7</span>  *@
+@*         @Html.RadioButton("car", "Porsche Panamera") *@
+@*         <span>Porsche Panamera</span> *@
+@*         <p> *@
+@*             <button type="submit" class="btn btn-primary">Отправить</button> *@
+@*         </p> *@
+@*     } *@
+@* </div> *@
